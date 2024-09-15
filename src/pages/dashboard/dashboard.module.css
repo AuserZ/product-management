@@ -1,0 +1,23 @@
+.container {
+    padding: 100px 0px;
+}
+
+.containerContent {
+    margin-bottom: rem(50);
+    border-radius: var(--mantine-radius-md);
+    border: solid #dee1e6 1px;
+    padding: 30px;
+    background-color: #FFFFFF;
+}
+
+.alink {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 14px;
+}
+
+.border{
+    border: solid #e0e4e4 1px;
+    border-radius: 10px;
+}

@@ -1,0 +1,45 @@
+.bg {
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.container {
+    padding: 10px 0;
+}
+
+.link {
+    transition: 0.3s;
+    color: var(--color-grey);
+    cursor: pointer;
+}
+
+.link:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.link.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.burger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}

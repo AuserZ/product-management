@@ -1,12 +1,15 @@
 :root {
-  --background: #ffffff;
+  --background: #fafafb;
   --foreground: #171717;
+  --color-primary: #6d31ed;
+  --color-grey: #565d6d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #fafafb;
+    --color-primary: #6d31ed;
   }
 }
 
@@ -17,9 +20,9 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground) !important;
+  background: var(--background) !important;
+  font-family: 'Manrope', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,6 +36,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.fontLexend{
+  font-family: 'Lexend', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

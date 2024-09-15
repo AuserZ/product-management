@@ -1,0 +1,6 @@
+.alink {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 14px;
+}
