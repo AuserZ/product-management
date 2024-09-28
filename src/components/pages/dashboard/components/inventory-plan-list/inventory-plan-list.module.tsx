@@ -1,7 +1,7 @@
 import { Box, Center, Flex, Grid, Progress, rem, Text } from '@mantine/core';
 import { IconBuildingWarehouse } from '@tabler/icons-react';
 import React from 'react';
-import { COLORS } from '../../../../public/const';
+import { COLORS } from '../../../../../../public/const';
 import StatusBadge from '@/components/global/badge/badge.module';
 
 interface InventoryPlanList {

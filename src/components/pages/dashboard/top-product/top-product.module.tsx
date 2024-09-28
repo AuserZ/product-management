@@ -1,11 +1,9 @@
 import React from 'react';
 import { Center, Container, Flex, Grid, Group, Pagination, rem, Text } from '@mantine/core'
-import CardItem from '@/components/dashboard/card-item/card-item.module';
-import { COLORS } from '../../../../public/const';
 import styles from './top-product.module.css';
 import TitleSection from '@/components/global/Text/title-section.module';
 import { IconArrowRight } from '@tabler/icons-react';
-import ProductCard from '@/components/dashboard/top-product-list/top-product-list.module';
+import ProductCard from '@/components/pages/dashboard/components/top-product-list/top-product-list.module';
 
 const TopProductModule: React.FC = () => {
     const data = [
@@ -26,7 +24,7 @@ const TopProductModule: React.FC = () => {
             </Group>
             <Group justify='space-between' mb={"lg"}>
                 {data.map((item) =>
-                    <ProductCard product={item}></ProductCard>
+                    <ProductCard key={item.productName} product={item}></ProductCard>
                 )}
             </Group>
 

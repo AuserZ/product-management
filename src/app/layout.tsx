@@ -44,5 +44,4 @@ export default function RootLayout({
     </html>
   );
 }
-// Removed the incorrect function definition
 

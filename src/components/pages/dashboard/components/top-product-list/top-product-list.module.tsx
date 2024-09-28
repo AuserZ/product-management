@@ -1,6 +1,6 @@
 import { Card, Text, Image } from '@mantine/core';
 import React from 'react';
-import { COLORS } from '../../../../public/const';
+import { COLORS } from '../../../../../../public/const';
 
 interface Product {
     productName: string;

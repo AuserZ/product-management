@@ -3,10 +3,10 @@
 import { Container, Grid, Title, Text, Divider, Group, rem, Center, Flex, ColorSwatch } from '@mantine/core';
 import React from 'react';
 import styles from './dashboard.module.css';
-import CardItem from '@/components/dashboard/card-item/card-item.module';
-import { COLORS } from '../../../public/const';
+import CardItem from '@/components/pages/dashboard/components/card-item/card-item.module';
+import { COLORS } from '../../../../public/const';
 import { IconArrowRight } from '@tabler/icons-react';
-import InventoryPlanList from '@/components/dashboard/inventory-plan-list/inventory-plan-list.module';
+import InventoryPlanList from '@/components/pages/dashboard/components/inventory-plan-list/inventory-plan-list.module';
 import DonutChart from '@/components/global/ring-progress/ring-progress.module';
 import TopProductModule from './top-product/top-product.module';
 
