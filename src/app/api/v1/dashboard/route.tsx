@@ -20,6 +20,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   // Basic authorization check
   const apiKey = request.headers.get('x-api-key');
   console.log(apiKey);
+  console.log(process.env.X_API_KEY);
   if (apiKey !== process.env.X_API_KEY) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
