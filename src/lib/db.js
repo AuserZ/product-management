@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import sql from 'mssql';
 
 dotenv.config();
 
