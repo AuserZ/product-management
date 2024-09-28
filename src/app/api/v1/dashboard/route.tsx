@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';
+import { connectToDatabase } from '@/lib/db';
 import dotenv from 'dotenv';
 import { QUERY_DASHBOARD } from '@/lib/Query';
 
@@ -15,15 +15,15 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   let conn;
   try {
     console.log('start - Dashboard GET');
-    conn = await pool.getConnection();
+    const db = await connectToDatabase();
     
     console.log('connection established');
 
     let query = QUERY_DASHBOARD;
     console.log('query:', query);
 
-    const rows = await conn.query(query);
-    const response = NextResponse.json(rows);
+    const result = await db.request().query(query);
+    const response = NextResponse.json(result.recordset);
 
     console.log('Response', response);
     console.log('end - Dashboard GET');
@@ -31,7 +31,5 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   } catch (err) {
     console.error(err);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-  } finally {
-    if (conn) conn.release();
   }
 }

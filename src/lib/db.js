@@ -1,14 +1,24 @@
-import mariadb from 'mariadb';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const pool = mariadb.createPool({
-  host: process.env.DB_HOST,
+const config = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
+  server: process.env.DB_HOST,
   database: process.env.DB_NAME,
-  connectionLimit: 5,
-});
+  port: 1433, // Optional, defaults to 1433
+  options: {
+    encrypt: true, // Required for Azure SQL
+    trustServerCertificate: false, // Change to true if using self-signed certs
+  },
+};
 
-export default pool;
+let pool;
+
+export async function connectToDatabase() {
+  if (!pool) {
+    pool = await sql.connect(config);
+  }
+  return pool;
+}
