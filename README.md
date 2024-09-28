@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create .env.local
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=db_product_management
+DB_USER=root
+DB_PASSWORD=your_local_password
+X_API_KEY=your_local_api_key
+
 First, run the development server:
 
 ```bash
