@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Adjust this as needed
+          node-version: '18'  # Specify the Node.js version you want to use
 
       - name: Install dependencies
         run: npm install
@@ -28,5 +28,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ProductManagement'  # Your Azure Web App name
-          slot-name: 'production'
+          slot-name: 'production'  # Change if you use deployment slots
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}  # Your publish profile secret
