@@ -14,7 +14,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
   let conn;
   try {
-    console.log('start - Dashboard GET');
+    console.log('starts - Dashboard GET');
     const db = await connectToDatabase();
     
     console.log('connection established');
