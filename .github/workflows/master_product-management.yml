@@ -18,11 +18,8 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: Clear dependencies cache
-        run: npm cache clean --force
-
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the Next.js application
         run: npm run build

@@ -1,11 +1,28 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000
+const express = require('express');
+const next = require('next');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.prepare().then(() => {
+  const server = express();
+
+  // Custom route example
+  server.get('/p/:id', (req, res) => {
+    const actualPage = '/post';
+    const queryParams = { id: req.params.id };
+    app.render(req, res, actualPage, queryParams);
+  });
+
+  // Default catch-all handler to allow Next.js to handle all other routes
+  server.get('*', (req, res) => {
+    return handle(req, res);
+  });
+
+  const port = process.env.PORT || 3000;
+  server.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`> Ready on ${port}`);
+  });
+});
