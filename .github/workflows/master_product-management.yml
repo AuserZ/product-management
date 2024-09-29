@@ -31,8 +31,10 @@ jobs:
           cp -r public release/public
           cp package.json release/
           cp next.config.mjs release/
-          cp server.js release/  # Ensure the custom server file is included
           cd release && zip -r ../release.zip .
+
+      - name: List contents of deployment package
+        run: unzip -l release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
